@@ -1,0 +1,41 @@
+MaterialID,MaterialName,Category,Criticality,SafetyStockUnits
+MAT-001,SEMI-Component-1,Semiconductors,Critical,551
+MAT-002,SEMI-Component-2,Semiconductors,Standard,450
+MAT-003,SEMI-Component-3,Semiconductors,Critical,709
+MAT-004,SEMI-Component-4,Semiconductors,Critical,1616
+MAT-005,SEMI-Component-5,Semiconductors,Critical,1364
+MAT-006,SEMI-Component-6,Semiconductors,Critical,691
+MAT-007,SEMI-Component-7,Semiconductors,Critical,1534
+MAT-008,SEMI-Component-8,Semiconductors,Critical,1649
+MAT-009,SEMI-Component-9,Semiconductors,Critical,1830
+MAT-010,SEMI-Component-10,Semiconductors,Standard,629
+MAT-011,PCBS-Component-1,PCBs,Critical,1706
+MAT-012,PCBS-Component-2,PCBs,Critical,513
+MAT-013,PCBS-Component-3,PCBs,Standard,363
+MAT-014,PCBS-Component-4,PCBs,Critical,1196
+MAT-015,PCBS-Component-5,PCBs,Critical,940
+MAT-016,PCBS-Component-6,PCBs,Standard,544
+MAT-017,PCBS-Component-7,PCBs,Critical,1278
+MAT-018,PCBS-Component-8,PCBs,Critical,1204
+MAT-019,PCBS-Component-9,PCBs,Critical,588
+MAT-020,PCBS-Component-10,PCBs,Standard,749
+MAT-021,PASS-Component-1,Passive Components,Critical,1275
+MAT-022,PASS-Component-2,Passive Components,Critical,1100
+MAT-023,PASS-Component-3,Passive Components,Standard,570
+MAT-024,PASS-Component-4,Passive Components,Standard,271
+MAT-025,PASS-Component-5,Passive Components,Critical,966
+MAT-026,PASS-Component-6,Passive Components,Standard,281
+MAT-027,PASS-Component-7,Passive Components,Standard,303
+MAT-028,PASS-Component-8,Passive Components,Standard,664
+MAT-029,PASS-Component-9,Passive Components,Standard,573
+MAT-030,PASS-Component-10,Passive Components,Critical,1227
+MAT-031,ENCL-Component-1,Enclosures & Plastics,Standard,473
+MAT-032,ENCL-Component-2,Enclosures & Plastics,Standard,273
+MAT-033,ENCL-Component-3,Enclosures & Plastics,Standard,375
+MAT-034,ENCL-Component-4,Enclosures & Plastics,Standard,450
+MAT-035,ENCL-Component-5,Enclosures & Plastics,Critical,1277
+MAT-036,ENCL-Component-6,Enclosures & Plastics,Standard,770
+MAT-037,ENCL-Component-7,Enclosures & Plastics,Standard,532
+MAT-038,ENCL-Component-8,Enclosures & Plastics,Standard,257
+MAT-039,ENCL-Component-9,Enclosures & Plastics,Standard,232
+MAT-040,ENCL-Component-10,Enclosures & Plastics,Standard,610

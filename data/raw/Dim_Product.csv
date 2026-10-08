@@ -1,0 +1,21 @@
+ProductID,ProductName,ProductCategory,ComplexityTier,PrimaryLine,TargetYieldPct
+PRD-01,Apex Industrial Model-1,Industrial IoT,Medium,Line 1,0.95
+PRD-02,Apex Consumer Model-2,Consumer Audio,High,Line 2,0.94
+PRD-03,Apex Power Model-3,Power Systems,Medium,Line 3,0.97
+PRD-04,Apex Industrial Model-4,Industrial IoT,Low,Line 1,0.98
+PRD-05,Apex Consumer Model-5,Consumer Audio,Medium,Line 2,0.96
+PRD-06,Apex Power Model-6,Power Systems,Medium,Line 3,0.97
+PRD-07,Apex Industrial Model-7,Industrial IoT,Low,Line 1,0.98
+PRD-08,Apex Consumer Model-8,Consumer Audio,Medium,Line 2,0.96
+PRD-09,Apex Power Model-9,Power Systems,Low,Line 3,0.97
+PRD-10,Apex Industrial Model-10,Industrial IoT,Low,Line 1,0.98
+PRD-11,Apex Consumer Model-11,Consumer Audio,Medium,Line 2,0.96
+PRD-12,Apex Power Model-12,Power Systems,Medium,Line 3,0.97
+PRD-13,Apex Industrial Model-13,Industrial IoT,Medium,Line 1,0.95
+PRD-14,Apex Consumer Model-14,Consumer Audio,High,Line 2,0.94
+PRD-15,Apex Power Model-15,Power Systems,Medium,Line 3,0.97
+PRD-16,Apex Industrial Model-16,Industrial IoT,Low,Line 1,0.98
+PRD-17,Apex Consumer Model-17,Consumer Audio,Medium,Line 2,0.96
+PRD-18,Apex Power Model-18,Power Systems,Low,Line 3,0.97
+PRD-19,Apex Industrial Model-19,Industrial IoT,Low,Line 1,0.98
+PRD-20,Apex Consumer Model-20,Consumer Audio,Medium,Line 2,0.96

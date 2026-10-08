@@ -1,0 +1,3 @@
+WarehouseID,WarehouseName,TargetDockToStockDays
+WH-01,Central Logistics Hub,1.5
+WH-02,Plant Inbound Depot,2.0

@@ -1,0 +1,13 @@
+SupplierID,SupplierName,CategoryProvided,SupplierTier,ContractedLeadDays,SupplierRiskProfile
+SUP-01,Apex Micro Devices,Semiconductors,Tier 1,25,High Risk
+SUP-02,Silicon Circuits Corp,PCBs,Tier 1,18,Moderate Risk
+SUP-03,Transistor Dynamics,Semiconductors,Tier 1,22,Moderate Risk
+SUP-04,Shenzhen Core Tech,Semiconductors,Tier 2,30,High Risk
+SUP-05,EuroConnect Electronics,Passive Components,Tier 1,12,Stable
+SUP-06,Kyoto Passive Components,Passive Components,Tier 1,14,Stable
+SUP-07,Vanguard Multilayer PCBs,PCBs,Tier 2,20,Moderate Risk
+SUP-08,Precision Alloy Castings,Enclosures & Plastics,Tier 2,15,Stable
+SUP-09,FormaPlast Molding,Enclosures & Plastics,Tier 2,10,Stable
+SUP-10,AmpVolt Transformers,Passive Components,Tier 2,16,Stable
+SUP-11,Delta Interconnects,Passive Components,Tier 2,12,Stable
+SUP-12,Nordic Sensor Systems,Semiconductors,Tier 1,21,Stable
