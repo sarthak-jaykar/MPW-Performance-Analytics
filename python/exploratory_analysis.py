@@ -136,5 +136,5 @@ wh_summary = (
 print(wh_summary.to_string(index=False))
 
 print("\n" + "=" * 75)
-print("EDA Complete. Key patterns confirm clear causal linkages for Power BI.")
+print("EDA Complete. Key patterns are summarised for Power BI; observed associations do not establish causality.")
 print("=" * 75)
