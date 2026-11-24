@@ -13,7 +13,7 @@ The Power BI model contains two primary fact tables supported by shared dimensio
 ### Fact tables
 
 - `Fact_ProductionRun` — production execution and quality-related output.
-- `Fact_InboundProcurement` — supplier delivery and inbound warehouse processing.
+- `Fact_InboundProcurement` — supplier delivery and inbound warehouse-processing records.
 
 ### Dimensions
 
@@ -31,28 +31,26 @@ The model is intentionally compact to support cross-functional operational analy
 
 ### `Fact_ProductionRun`
 
-Contains production-run records across the three assembly lines.
+Contains production-run records across the assembly lines.
 
 | Column | Type | Role | Description |
 |---|---|---|---|
-| `RunID` | Integer | Primary Key | Unique production-run identifier. |
+| `WorkOrderID` | Integer | Primary Key | Unique production work-order identifier. |
 | `ExecutionDate` | Date | Foreign Key | Production execution date. |
-| `LineID` | Text | Dimension Ref | Assembly line identifier. |
 | `ProductID` | Text | Foreign Key | Product manufactured during the run. |
 | `WarehouseID` | Text | Foreign Key | Warehouse associated with material staging for the run. |
+| `LineID` | Text | Dimension Ref | Assembly line identifier. |
 | `PlannedQty` | Integer | Measure | Planned production quantity. |
 | `ProducedQty` | Integer | Measure | Total units produced. |
 | `GoodQty` | Integer | Measure | Units accepted as good output. |
 | `RejectedQty` | Integer | Measure | Units rejected during quality inspection. |
-| `PlannedRunHours` | Decimal | Measure | Scheduled operating hours. |
-| `ActualRunHours` | Decimal | Measure | Actual production runtime. |
+| `PlannedRunHours` | Decimal | Measure | Planned production runtime. |
+| `ActualRunHours` | Decimal | Measure | Generated actual production runtime. |
 | `DowntimeHours` | Decimal | Measure | Recorded downtime associated with the run. |
 | `DowntimeReason` | Text | Category | Primary downtime reason. |
 | `MaterialStarvationFlag` | Integer | Flag | `1` when the run experienced material starvation; otherwise `0`. |
 
 **Business rule:** `ProducedQty = GoodQty + RejectedQty`.
-
----
 
 ### `Fact_InboundProcurement`
 
@@ -61,14 +59,16 @@ Contains inbound purchase-order and warehouse-processing records.
 | Column | Type | Role | Description |
 |---|---|---|---|
 | `PO_ID` | Integer | Primary Key | Unique inbound purchase-order record. |
-| `OrderDate` | Date | Foreign Key | Purchase-order date. |
+| `OrderDate` | Date | Date | Purchase-order date. |
+| `ExpectedDeliveryDate` | Date | Date | Expected supplier delivery date. |
+| `ActualDeliveryDate` | Date | Date | Actual supplier delivery date. |
+| `PutawayDate` | Date | Date | Date material became available after warehouse putaway. |
 | `SupplierID` | Text | Foreign Key | Supplier fulfilling the order. |
 | `MaterialID` | Text | Foreign Key | Raw material purchased. |
 | `WarehouseID` | Text | Foreign Key | Receiving warehouse. |
-| `OrderQty` | Integer | Measure | Quantity ordered. |
+| `OrderedQty` | Integer | Measure | Quantity ordered. |
 | `ReceivedQty` | Integer | Measure | Quantity received. |
-| `ContractedLeadDays` | Integer | Parameter | Contracted supplier lead time. |
-| `ActualLeadDays` | Integer | Measure | Actual elapsed lead time to receipt. |
+| `ActualLeadDays` | Integer | Measure | Actual elapsed supplier lead time. |
 | `DeliveryVarianceDays` | Integer | Measure | Actual lead time minus contracted lead time. Positive values indicate delay. |
 | `DockToStockDays` | Decimal | Measure | Time from receipt at the dock to warehouse availability. |
 | `DelayRootCause` | Text | Category | Primary inbound delay category. |
@@ -85,7 +85,8 @@ Contains inbound purchase-order and warehouse-processing records.
 | `ProductName` | Product description. |
 | `ProductCategory` | Product category. |
 | `ComplexityTier` | Manufacturing complexity: High, Medium or Low. |
-| `TargetYieldRate` | Target first-pass yield for the product. |
+| `PrimaryLine` | Primary assembly line associated with the product. |
+| `TargetYieldPct` | Target first-pass yield percentage for the product. |
 
 ### `Dim_Supplier`
 
@@ -93,8 +94,9 @@ Contains inbound purchase-order and warehouse-processing records.
 |---|---|
 | `SupplierID` | Unique supplier identifier. |
 | `SupplierName` | Supplier name. |
-| `SupplierCountry` | Supplier country / operating region. |
 | `CategoryProvided` | Primary component category supplied. |
+| `SupplierTier` | Supplier tier classification. |
+| `ContractedLeadDays` | Contracted supplier lead time in days. |
 | `SupplierRiskProfile` | Risk classification: High Risk, Moderate Risk or Stable. |
 
 ### `Dim_Material`
@@ -105,6 +107,7 @@ Contains inbound purchase-order and warehouse-processing records.
 | `MaterialName` | Material description. |
 | `Category` | Material category. |
 | `Criticality` | Critical or Standard. |
+| `SafetyStockUnits` | Configured safety-stock quantity for the material. |
 
 ### `Dim_Warehouse`
 
@@ -154,4 +157,4 @@ Contains inbound purchase-order and warehouse-processing records.
 - All dates fall within FY2025.
 - Quantities are designed to maintain logical production relationships.
 - The model is intentionally smaller than a production ERP schema.
-- Supplier delivery, warehouse processing and production indicators are analyzed together to support operational root-cause diagnosis; the model should not be interpreted as a transaction-level proof of direct causality between an individual supplier event and an individual production order.
+- Supplier delivery, warehouse processing and production indicators are analyzed together to support operational root-cause diagnosis; the model should not be interpreted as transaction-level proof of direct causality between an individual supplier event and an individual production order.
