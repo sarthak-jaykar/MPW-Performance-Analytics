@@ -167,12 +167,12 @@ DIVIDE([Total Actual Run Hours], [Total Planned Run Hours], 0)
 Capacity Loss % =
 DIVIDE(
     [Total Downtime Hours],
-    [Total Actual Run Hours] + [Total Downtime Hours],
+    [Total Planned Run Hours] + [Total Downtime Hours],
     0
 )
 ```
 
-**Purpose:** Share of total scheduled operating time represented by downtime.
+**Purpose:** Share of planned run hours plus recorded downtime represented by downtime. This denominator matches the time base used by the dataset generator.
 
 **Format:** Percentage, 1 decimal place
 
@@ -308,7 +308,7 @@ DIVIDE(
 )
 ```
 
-**Purpose:** Same breach concept expressed directly as a percentage.
+**Purpose:** Alias for `Warehouse Delay %`, retained as a report-facing measure name. Both measures intentionally use the same common 2.0-day benchmark and return the same percentage.
 
 **Format:** Percentage, 1 decimal place
 
