@@ -8,6 +8,10 @@
 ![Data Modeling](https://img.shields.io/badge/Data%20Model-Star%20Schema-blue)
 ![Domain](https://img.shields.io/badge/Domain-Manufacturing%20%26%20Supply%20Chain-success)
 
+[![Dashboard Preview](screenshots/01_executive_overview.png)](screenshots/01_executive_overview.png)
+
+*Select the image to view it at full size.*
+
 ---
 
 ## Project Overview
